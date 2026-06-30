@@ -1,0 +1,10 @@
+services:
+  cli:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: aironou/blog:cli
+    profiles:
+      - cli
+    volumes:
+      - "./:/blog"

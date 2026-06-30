@@ -1,0 +1,12 @@
+ARG WORKDIR=/blog
+ARG USER=node
+
+FROM node:26-alpine AS base
+
+ARG WORKDIR
+ARG USER
+
+WORKDIR $WORKDIR
+USER $USER
+
+ENTRYPOINT ["npm"]
