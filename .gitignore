@@ -1,0 +1,7 @@
+node_modules/
+
+src/layouts/*/*.min.css
+
+src/posts/*/assets/*.min.css
+src/posts/*/assets/*.min.js
+
