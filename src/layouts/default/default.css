@@ -1,0 +1,10 @@
+body {
+    background: #121212;
+    color: #eeeeee;
+}
+
+hgroup {
+    text-align: right;
+    padding-right: 16px;
+    border-right: 10px solid #eeeeee;
+}

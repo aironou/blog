@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+    <head>
+        <meta charset="utf-8">
+
+        <meta property="og:type" content="article">
+        <title>{{title}}</title>
+        <meta property="og:title" content="{{title}}">
+        <meta name="description" content="{{subtitle}}">
+        <meta property="og:description" content="{{subtitle}}">
+        {% if banner %}<meta property="og:image" content="{{banner}}">{% endif %}
+
+        <link rel="stylesheet" href="../../assets/layouts/default.min.css">
+        {% if stylesheet %}<link rel="stylesheet" href="{{stylesheet}}">{% endif %}
+    </head>
+    <body>
+        {% if title %}
+        <hgroup>
+            <h1>{{title}}</h1>
+            <p>{{subtitle}}</p>
+        </hgroup>
+        <br>
+        {% endif %}
+
+        {% if banner %}
+        <img src="{{banner}}" alt="">
+        <br>
+        {% endif %}
+
+        {{ content }}
+
+        {% if script %}<script src="{{script}}"></script>{% endif %}
+    </body>
+</html>
