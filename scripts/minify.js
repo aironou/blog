@@ -13,7 +13,7 @@ async function getFiles(directory) {
         }
 
         if (entry.isFile()) {
-            if (entry.name.endsWith('.min.css') || entry.name.endsWith('.min.css')) {
+            if (entry.name.endsWith('.min.js') || entry.name.endsWith('.min.css')) {
                 continue;
             }
 
