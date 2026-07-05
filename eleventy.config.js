@@ -9,6 +9,4 @@ export default function (config) {
 
     config.setDataFileBaseName('data');
     config.setDataFileSuffixes(['.11tydata']);
-
-    config.addFilter('url', (url) => `../${url}`);
 };
