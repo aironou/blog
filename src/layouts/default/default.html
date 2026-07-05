@@ -18,6 +18,12 @@
         <hgroup>
             <h1>{{title}}</h1>
             <p>{{subtitle}}</p>
+            <br>
+            <tr>
+                {% if "pt-BR" in langs %}<td><a href="../pt-BR">português</a></td>{% endif %}
+                {% if "en" in langs %}<td><a href="../en">english</a></td>{% endif %}
+                {% if "la" in langs %}<td><a href="../la">latina</a></td>{% endif %}
+            </tr>
         </hgroup>
         <br>
         {% endif %}
