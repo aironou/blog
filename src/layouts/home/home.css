@@ -1,5 +1,11 @@
 body {
     background: #121212;
+    max-width: 80ch;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+body, a {
     color: #eeeeee;
 }
 
