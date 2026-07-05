@@ -8,3 +8,12 @@ hgroup {
     padding-right: 16px;
     border-right: 10px solid #eeeeee;
 }
+
+ul {
+    list-style-position: inside;
+    padding-left: 6ch;
+}
+
+li::marker {
+    content: "";
+}
