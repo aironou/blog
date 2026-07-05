@@ -8,3 +8,17 @@ hgroup {
     padding-right: 16px;
     border-right: 10px solid #eeeeee;
 }
+
+div.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    color: #eeeeee;
+}
+
+a.icon {
+    text-decoration: none;
+}
