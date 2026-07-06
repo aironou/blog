@@ -25,3 +25,7 @@ a {
 a.icon {
     text-decoration: none;
 }
+
+img {
+    max-width: 80ch;
+}
