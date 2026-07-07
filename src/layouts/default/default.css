@@ -8,14 +8,46 @@ body {
 
 hgroup {
     text-align: right;
-    padding-right: 16px;
     border-right: 10px solid #eeeeee;
+    padding: 0 16px;
+}
+
+hgroup h1 {
+    margin-bottom: 4px;
+}
+
+hgroup p {
+    margin-top: 0;
+}
+
+header.banner {
+    position: relative;
+}
+
+header.banner hgroup {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: linear-gradient(to right, transparent, rgb(0, 0, 0, 0.7));
+    text-shadow: 0 1px 3px #000000;
 }
 
 div.row {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+nav.langs {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
 }
 
 a {
@@ -27,5 +59,7 @@ a.icon {
 }
 
 img {
+    display: block;
+    width: 100%;
     max-width: 80ch;
 }
