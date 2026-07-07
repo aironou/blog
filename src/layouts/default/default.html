@@ -14,25 +14,25 @@
         {% if stylesheet %}<link rel="stylesheet" href="{{stylesheet}}">{% endif %}
     </head>
     <body>
-        {% if title %}
-        <hgroup>
-            <div class="row">
-                <a href="../../{{lang}}/" class="icon">☰</a>
-                <h1>{{title}}</h1>
-            </div>
-            <p>{{subtitle}}</p>
-            <br>
-            <tr>
-                {% if "pt-BR" in langs %}<td><a href="../pt-BR">português</a></td>{% endif %}
-                {% if "en" in langs %}<td><a href="../en">english</a></td>{% endif %}
-                {% if "la" in langs %}<td><a href="../la">latina</a></td>{% endif %}
-            </tr>
-        </hgroup>
-        <br>
-        {% endif %}
-
-        {% if banner %}
-        <img src="{{banner}}" alt="">
+        {% if title or banner %}
+        <header class="{% if banner %}banner{% endif %}">
+            {% if banner %}<img src="{{banner}}" alt="">{% endif %}
+            {% if title %}
+            <hgroup>
+                <div class="row">
+                    <a href="../../{{lang}}/" class="icon">☰</a>
+                    <h1>{{title}}</h1>
+                </div>
+                <p>{{subtitle}}</p>
+                <br>
+                <nav class="langs" aria-label="Idiomas disponíveis">
+                    {% if langs contains "pt-BR" %}<a href="../pt-BR">português</a>{% endif %}
+                    {% if langs contains "en" %}<a href="../en">english</a>{% endif %}
+                    {% if langs contains "la" %}<a href="../la">latina</a>{% endif %}
+                </nav>
+            </hgroup>
+            {% endif %}
+        </header>
         <br>
         {% endif %}
 
