@@ -25,19 +25,17 @@
                 </div>
                 <p>{{subtitle}}</p>
                 <br>
-                <nav class="langs" aria-label="Idiomas disponíveis">
-                    {% if langs contains "pt-BR" %}<a href="../pt-BR">português</a>{% endif %}
-                    {% if langs contains "en" %}<a href="../en">english</a>{% endif %}
-                    {% if langs contains "la" %}<a href="../la">latina</a>{% endif %}
+                <nav class="languages">
+                    {% if languages contains "pt-BR" %}<a href="../pt-BR">português</a>{% endif %}
+                    {% if languages contains "en" %}<a href="../en">english</a>{% endif %}
+                    {% if languages contains "la" %}<a href="../la">latina</a>{% endif %}
                 </nav>
             </hgroup>
             {% endif %}
         </header>
         <br>
         {% endif %}
-
         {{ content }}
-
         {% if script %}<script src="{{script}}"></script>{% endif %}
     </body>
 </html>

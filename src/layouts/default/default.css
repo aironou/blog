@@ -44,7 +44,7 @@ div.row {
     align-items: center;
 }
 
-nav.langs {
+nav.languages {
     display: flex;
     gap: 16px;
     justify-content: flex-end;
