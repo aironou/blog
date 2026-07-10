@@ -13,12 +13,26 @@
             <h1>aironou.com.br</h1>
             <br>
             <tr>
-                <td><a href="../pt-BR">português</a></td>
-                <td><a href="../en">english</a></td>
-                <td><a href="../la">latina</a></td>
+                {% if lang != 'pt-BR' %}<td><a href="../pt-BR">português</a></td>{% endif %}
+                {% if lang != 'en' %}<td><a href="../en">english</a></td>{% endif %}
+                {% if lang != 'la' %}<td><a href="../la">latina</a></td>{% endif %}
             </tr>
         </hgroup>
         <br>
-        {{ content }}
+        <div class="posts">
+            {% for post in posts %}
+            <a href="../{{ post.url }}/{{ lang}}">
+                <div class="post{% if post.banner %} banner{% endif %}">
+                    {% if post.banner %}
+                    <img src="../{{ post.url }}/{{ post.banner }}" alt="">
+                    {% endif %}
+                    <hgroup>
+                        <h2>{{post.title}}</h2>
+                        <p>{{post.subtitle}}</p>
+                    </hgroup>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
     </body>
 </html>

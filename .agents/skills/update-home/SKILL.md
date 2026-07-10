@@ -14,20 +14,24 @@ o objetivo dessa skill é atualizar as homes do blog, adicionando o link dos úl
 
 o blog possui três homes, cada uma com um idioma:
 
-- `src/posts/en/index.md` é a home em inglês
-- `src/posts/la/index.md` é a home em latim
-- `src/posts/pt-BR/index.md` é a home em português
+- `src/posts/en/data.11tydata.js` é a home em inglês
+- `src/posts/la/data.11tydata.js` é a home em latim
+- `src/posts/pt-BR/data.11tydata.js` é a home em português
 
 cada uma dessas homes agrupa os textos do blog pelo idioma do texto.
 
 ## 2. textos
 
-os textos estão no diretório `src/posts/{title}/{lang}/*.{md,html}`, em que:
+os textos estão no diretório `src/posts/{url}/{lang}/*.{md,html}`, em que:
 
-- `{title}` é o título do texto que estará presente na URL para o texto
+- `{url}` é a URL para o texto
 - `{lang}` é o idioma do texto, podendo ser `en`, `la` e `pt-BR`
 
-dessa forma, quando o texto for convertido para HTML, a URL será `{title}/{lang}/`.
+dentro de cada arquivo de texto, é possível obter o `title` e `subtitle` do texto.
+
+no arquivo `src/posts/{url}/data.11tydata.js` é possível obter o `banner` do texto, que não é obrigatório, podendo ser nulo.
+
+**Não avance caso não tenha a URL, idioma, título e subtítulo do texto**.
 
 # fluxo
 
@@ -39,19 +43,26 @@ deverá obter a lista de textos, organizados por data de criação do arquivo e 
 
 # 2. atualizar home
 
-cada home deverá ser atualizada para listar os textos encontrados no idioma da home.
+cada home deverá ser atualizada para listar os textos encontrados no idioma da home, adicionando o texto na lista `posts`.
 
 a lista de textos deve funcionar de forma decrescente, sendo o primeiro item da lista o texto mais novo e o último o mais antigo.
 
 cada texto deve respeitar o formato abaixo:
 
 ```
-- [{title}](../{url})
+{
+    url: '{url}',
+    title: '{title}',
+    subtitle: '{subtitle}',
+    banner: '{banner}',
+}
 ```
 
 desse formato, assuma que:
 
+- `{url}` é a URL do texto
 - `{title}` é o campo `title` que se encontra no arquivo de texto
-- `{url}` é a URL que o texto terá após ser convertido para HTML
+- `{subtitle}` é o campo `subtitle` que se encontra no arquivo de texto
+- `{banner}` é o campo `banner` que se encontra no arquivo `data.11tydata.js`, mas sem o `../` do início
 
 a lista deverá ser inserida abaixo do título da página que serve a home.
