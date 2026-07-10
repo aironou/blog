@@ -12,5 +12,9 @@ dist: node_modules
 cli:
 	$(DC) run --entrypoint '' --rm cli sh
 
+.PHONY: watch
+watch:
+	$(DC_CLI) run watch
+
 node_modules:
 	$(DC_CLI) install
