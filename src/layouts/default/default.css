@@ -56,12 +56,28 @@ a {
 
 a.icon {
     text-decoration: none;
+    font-size: xx-large;
 }
 
 img {
     display: block;
     width: 100%;
     max-width: 80ch;
+}
+
+p {
+    line-height: 1.5;
+}
+
+hr {
+    width: 10ch;
+    margin: 5ch auto;
+}
+
+blockquote {
+    padding-left: 16px;
+    border-left: 3px solid #eeeeee;
+    margin: 4ch;
 }
 
 footer {
