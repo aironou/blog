@@ -36,6 +36,10 @@
         <br>
         {% endif %}
         {{ content }}
+        <footer>
+            {% if languages contains "pt-BR" %}quer comentar algo sobre este texto? escreva para blog+{{slug}}@aironou.com.br{% endif %}
+            {% if languages contains "en" %}do you want to comment anything about this text? write to blog+{{slug}}@aironou.com.br{% endif %}
+        </footer>
         {% if script %}<script src="{{script}}"></script>{% endif %}
     </body>
 </html>

@@ -63,3 +63,8 @@ img {
     width: 100%;
     max-width: 80ch;
 }
+
+footer {
+    margin: 12ch 0 7ch 0;
+    text-align: center;
+}
