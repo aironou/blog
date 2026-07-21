@@ -6,7 +6,7 @@ export default {
             url: 'whoami',
             title: 'whoami',
             subtitle: 'um texto sobre quem sou ou quase isso',
-            banner: 'assets/banner.png',
+            banner: 'banner.png',
             published_at: '2026-07-18'
         }
     ],

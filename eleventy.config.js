@@ -1,6 +1,7 @@
 import markdownIt from "markdown-it";
 import anchor from 'markdown-it-anchor';
 import footnote_plugin from "markdown-it-footnote";
+import fs from "node:fs";
 
 export default function (config) {
     config.setInputDirectory('src/posts');
@@ -8,7 +9,12 @@ export default function (config) {
     config.setLayoutsDirectory('../layouts');
     config.setOutputDirectory('dist');
 
-    config.addPassthroughCopy('src/posts/**/assets/*.{min.js,min.css,jpg,png}');
+    for (const entry of fs.readdirSync('src/posts', {withFileTypes: true})) {
+        const assetsPath = `src/posts/${entry.name}/assets/*.{min.js,min.css,jpg,png}`;
+
+        config.addPassthroughCopy({[assetsPath]: `assets/${entry.name}`});
+    }
+
     config.addPassthroughCopy({'src/layouts/**/*.min.css': 'assets/layouts'});
 
     config.setDataFileBaseName('data');
