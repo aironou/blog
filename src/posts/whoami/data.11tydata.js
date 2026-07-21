@@ -1,5 +1,5 @@
 export default {
-    banner: '../assets/banner.png',
+    banner: 'banner.png',
     languages: ['pt-BR'],
     slug: 'whoami',
 }

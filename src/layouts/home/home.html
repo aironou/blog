@@ -21,10 +21,10 @@
         <br>
         <div class="posts">
             {% for post in posts %}
-            <a href="../{{ post.url }}/{{ lang}}">
+            <a href="{{ post.url }}/">
                 <div class="post{% if post.banner %} banner{% endif %}">
                     {% if post.banner %}
-                    <img src="../{{ post.url }}/{{ post.banner }}" alt="">
+                    <img src="../assets/{{ post.url }}/{{ post.banner }}" alt="">
                     {% endif %}
                     <hgroup>
                         <h2>{{post.title}}</h2>
