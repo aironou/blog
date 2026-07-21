@@ -9,11 +9,10 @@ export default function (config) {
     config.setLayoutsDirectory('../layouts');
     config.setOutputDirectory('dist');
 
-    config.addPassthroughCopy('src/posts/**/assets/*.{min.js,min.css,jpg,png}');
     for (const entry of fs.readdirSync('src/posts', {withFileTypes: true})) {
         const assetsPath = `src/posts/${entry.name}/assets/*.{min.js,min.css,jpg,png}`;
 
-        config.addPassthroughCopy({assetsPath: `assets/${entry.name}`});
+        config.addPassthroughCopy({[assetsPath]: `assets/${entry.name}`});
     }
 
     config.addPassthroughCopy({'src/layouts/**/*.min.css': 'assets/layouts'});
